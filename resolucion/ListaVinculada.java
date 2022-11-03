@@ -16,6 +16,7 @@ package resolucion;
 * */
 public class ListaVinculada {
     /*La clase lista debería contener el criterio con el cual se ordenan los nodos, los nodos de una lista deberían
-    encargarse de ordenarse a sí mismos (cada nodo va a ordenar el siguiente)
+    encargarse de ordenarse a sí mismos (cada nodo va a ordenar el siguiente). Los metodos de ordenamiento son
+    siempre los mismos y solo cambian el parametro que les importa segun el criterio de la lista
     */
 }
