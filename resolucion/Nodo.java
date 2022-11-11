@@ -6,5 +6,6 @@ public class Nodo {
 
     public Nodo (Object o){
         this.o=o;
+        this.siguiente=null;
     }
 }
