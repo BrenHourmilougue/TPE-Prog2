@@ -8,4 +8,9 @@ public class Nodo {
         this.o=o;
         this.siguiente=null;
     }
+    public void insert(Object o){
+        Nodo nodo = new Nodo (o);
+        
+    }
+
 }
