@@ -23,7 +23,7 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
     public void add(T valorAInsertar){
         Nodo<T> nuevo = new Nodo<T>(valorAInsertar);
         Iterator it = new Iterador(this.primero);
-        while((orden.compare((T) ((Iterador<T>) it).getCursor().getO(), valorAInsertar)<0)&&(it.hasNext())){
+        while((orden.compare((T) ((Iterador<T>) it).getCursor().getO(), valorAInsertar)>0)&&(it.hasNext())){
             it.next();
         }
         nuevo.enlazarSiguiente((Nodo) it.next());
@@ -61,6 +61,10 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
 
     public void setOrden(Comparador<T> orden) {
         this.orden = orden;
+        //llame a ordenar();
+    }
+    public void ordenar(){
+        //ordenar burbujeo o alguno por el estilo pero usando el iterator
     }
 
     public void pop(int i){
@@ -89,48 +93,4 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
         return size;
     }*/
 
-    private class IteradorNodos implements Iterator<Nodo>{
-        private Nodo nodoActual;
-        public IteradorNodos(){
-            nodoActual = primero;
-        }
-        @Override
-        public boolean hasNext() {
-            return nodoActual<Lista.size();
-        }
-
-        @Override
-        public Nodo next() {
-            //nodoActual = nodoActual.irAliguiente();
-            return null;//return lista.get(nodoActual-1);
-        }
-
-        @Override
-        public void remove() {
-            Iterator.super.remove();
-        }
-
-        @Override
-        public void forEachRemaining(Consumer<? super Nodo> action) {
-            Iterator.super.forEachRemaining(action);
-        }
-    }
-
-/*
-    @Override
-    public Iterator<Object> iterator() {
-        return null;
-    }
-
-    @Override
-    public void forEach(Consumer<? super Object> action) {
-        Iterable.super.forEach(action);
-    }
-
-    @Override
-    public Spliterator<Object> spliterator() {
-        return Iterable.super.spliterator();
-    }
-
- */
 }
