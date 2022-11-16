@@ -29,7 +29,6 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
         nuevo.enlazarSiguiente((Nodo) it.next());
         ((Iterador<T>) it).getCursor().enlazarSiguiente(nuevo);
 
-
         /*
         Nodo nuevo = new Nodo(o);
         if (primero==null){

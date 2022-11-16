@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa9c8f65-7980-4c69-af75-6a5aa8fdebd2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resolucion/Comparador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resolucion/Iterador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resolucion/Lista.java" beforeDir="false" afterPath="$PROJECT_DIR$/resolucion/Lista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resolucion/Nodo.java" beforeDir="false" afterPath="$PROJECT_DIR$/resolucion/Nodo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resolucion/Recorrible.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resolucion/Strategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resolucion/iterador/Contenedor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resolucion/iterador/ContenedorConcreto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resolucion/iterador/Iterador.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
