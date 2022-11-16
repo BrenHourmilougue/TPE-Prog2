@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aa9c8f65-7980-4c69-af75-6a5aa8fdebd2" name="Changes" comment="" />
+    <list default="true" id="aa9c8f65-7980-4c69-af75-6a5aa8fdebd2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resolucion/Comparador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resolucion/Iterador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resolucion/Lista.java" beforeDir="false" afterPath="$PROJECT_DIR$/resolucion/Lista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resolucion/Nodo.java" beforeDir="false" afterPath="$PROJECT_DIR$/resolucion/Nodo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resolucion/Recorrible.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resolucion/Strategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resolucion/iterador/Contenedor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resolucion/iterador/ContenedorConcreto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resolucion/iterador/Iterador.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -29,9 +41,15 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="resolucion" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
