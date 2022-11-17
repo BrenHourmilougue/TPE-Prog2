@@ -10,12 +10,12 @@ import resolucion.Comparadores.ComparadorDNI;
 
 public class Lista<T> /* implements Iterable<Nodo>*/{
     private Nodo<T> primero;
-    //private int size;
+    private int size;
     private Comparador<T> orden; //getter y setter. Strategyyyyy
     public Lista (Comparador<T> orden){
         this.primero=null;
         this.orden=orden;
-        //this.size=0;
+        this.size=0;
     }
     
     public void add(T valorAInsertar){
@@ -26,6 +26,8 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
         }
         nuevo.enlazarSiguiente((Nodo) it.next());
         ((Iterador<T>) it).getCursor().enlazarSiguiente(nuevo);
+        this.size++;
+
     }
     public void mostrarLista(){
         Iterator it = new Iterador(this.primero);
@@ -54,8 +56,21 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
                 cont++;
             }
             ((Iterador<T>) it).getCursor().enlazarSiguiente(((Iterador<T>) it).getCursor().getSiguiente().getSiguiente());
+            this.size--;
         }
     }
+    public void popElemento(Object o){
+        Iterator it = new Iterador(this.primero);
+        int cont = 0;
+        while ((cont < size()-1) && !((((Iterador<?>) it).getCursor()).equals(o))) {
+            it.next();
+            cont++;
+        }
+        ((Iterador<T>) it).getCursor().enlazarSiguiente(((Iterador<T>) it).getCursor().getSiguiente().getSiguiente());
+        this.size--;
+    }
+
+
     public Object get(int i){
         int cont=0;
         Nodo tmp = primero;
@@ -65,8 +80,8 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
         }
         return tmp.getO();
     }
-    /*public int size(){
+    public int size(){
         return size;
-    }*/
+    }
 
 }

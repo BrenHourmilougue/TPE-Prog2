@@ -12,6 +12,7 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main (String[]args){
+
         Facultad f1 = new Facultad("Exactas");
         Carrera c1 = new Carrera("TUDAI");
         Materia m1 = new Materia("Programacion 2");
@@ -26,7 +27,7 @@ public class Main {
         m1.addAlumno(a3);
 
         Lista l1 =new Lista<>(new ComparadorInt());
-
+//En la clase de sole decia que el metodo instertar debia insertar ordenado
         l1.add(10);
         l1.add(21);
         l1.add(1);
@@ -36,7 +37,8 @@ public class Main {
         l1.mostrarLista();
 
         l1.popPosicion(0);
-        //l1.popElemento(5);
-        //l1.popElemento(11);
+        l1.popElemento(5);
+        l1.popElemento(11);
+        l1.mostrarLista();
     }
 }
