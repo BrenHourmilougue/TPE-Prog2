@@ -1,5 +1,8 @@
 package resolucion;
-
+import resolucion.facultades.Alumno;
+import resolucion.Comparadores.Comparador;
+import resolucion.Comparadores.ComparadorApellido;
+import resolucion.Comparadores.ComparadorDNI;
 import java.time.LocalDate;
 
 public class Main {

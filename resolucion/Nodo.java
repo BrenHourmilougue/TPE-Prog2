@@ -1,4 +1,8 @@
 package resolucion;
+import resolucion.facultades.Alumno;
+import resolucion.Comparadores.Comparador;
+import resolucion.Comparadores.ComparadorApellido;
+import resolucion.Comparadores.ComparadorDNI;
 
 public class Nodo<T> {
     private Nodo<T> siguiente;
