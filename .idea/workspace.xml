@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa9c8f65-7980-4c69-af75-6a5aa8fdebd2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resolucion/Alumno.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resolucion/ComparadorApellido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resolucion/ComparadorDNI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resolucion/Materia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resolucion/Comparador.java" beforeDir="false" afterPath="$PROJECT_DIR$/resolucion/Comparador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resolucion/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/resolucion/Alumno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resolucion/ComparadorDNI.java" beforeDir="false" afterPath="$PROJECT_DIR$/resolucion/ComparadorDNI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

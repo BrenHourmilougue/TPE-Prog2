@@ -16,6 +16,9 @@ public class Alumno {
         this.fnac=fnac;
         this.intereses=new ArrayList<String>();
     }
+    public void addIntereses(String s){
+        //agregar interes
+    }
 
     public int getDni() {
         return dni;
