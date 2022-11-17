@@ -1,4 +1,5 @@
 package resolucion.Comparadores;
+import resolucion.facultades.Alumno;
 
 public class ComparadorDNI<Alumno> extends Comparador<Alumno>{
 
