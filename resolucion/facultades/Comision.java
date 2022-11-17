@@ -1,16 +1,15 @@
 package resolucion.facultades;
-import resolucion.Comparadores.ComparadorNombre;
+
+import resolucion.Comparadores.ComparadorDNI;
 import resolucion.Lista;
 
-public class Materia {
+public class Comision {
     private String nombre;
-    private Lista<Comision>comisiones;
-
     private Lista<Alumno>alumnos;
 
-    public Materia(String n){
+    public Comision(String n){
         this.nombre=n;
-        this.alumnos=new Lista<Alumno>(new ComparadorNombre<>());
+        this.alumnos=new Lista<Alumno>(new ComparadorDNI());
     }
     public void addAlumno(Alumno a){
         this.alumnos.add(a);

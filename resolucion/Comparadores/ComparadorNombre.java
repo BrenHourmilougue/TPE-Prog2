@@ -1,10 +1,9 @@
 package resolucion.Comparadores;
 
-import java.util.Comparator;
-
-public abstract class Comparador<T> implements Comparator<T> {
+public class ComparadorNombre<T> extends Comparador<T>{
     @Override
     public int compare(T o1, T o2) {
+        //obtener nombre de objetos y comparar
         return 0;
     }
 }

@@ -19,6 +19,9 @@ public class Alumno {
     public void addIntereses(String s){
         //agregar interes
     }
+    public int getEdad(){
+        return LocalDate.now().getYear()-this.fnac.getYear();
+    }
 
     public int getDni() {
         return dni;
