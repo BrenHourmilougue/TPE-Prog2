@@ -1,4 +1,4 @@
-package resolucion;
+package resolucion.facultades;
 
 public class Carrera {
 }
