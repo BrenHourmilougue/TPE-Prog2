@@ -1,4 +1,4 @@
-package resolucion;
+package resolucion.Comparadores;
 
 import java.util.Comparator;
 

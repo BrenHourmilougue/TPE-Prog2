@@ -1,4 +1,4 @@
-package resolucion;
+package resolucion.Comparadores;
 
 public class ComparadorApellido<Alumno> extends Comparador<Alumno>{
 
