@@ -1,4 +1,4 @@
 package resolucion;
 
-public class Materia {
+public class Carrera {
 }
