@@ -1,10 +1,8 @@
 package resolucion;
 
 import java.util.Iterator;
-import java.util.Spliterator;
-import java.util.function.Consumer;
+
 import resolucion.Comparadores.Comparador;
-import resolucion.Comparadores.ComparadorApellido;
 import resolucion.Comparadores.ComparadorDNI;
 
 
@@ -12,7 +10,7 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
     private Nodo<T> primero;
     private int size;
     private Comparador<T> orden; //getter y setter. Strategyyyyy
-    public Lista (Comparador<T> orden){
+    public Lista (ComparadorDNI orden){
         this.primero=null;
         this.orden=orden;
         this.size=0;
