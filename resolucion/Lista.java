@@ -10,12 +10,12 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
     private Nodo<T> primero;
     private int size;
     private Comparador<T> orden; //getter y setter. Strategyyyyy
-    public Lista (ComparadorDNI orden){
+    public Lista (Comparador orden){
         this.primero=null;
         this.orden=orden;
         this.size=0;
     }
-    
+
     public void add(T valorAInsertar){
         Nodo<T> nuevo = new Nodo<T>(valorAInsertar);
         Iterator it = new Iterador(this.primero);
@@ -68,6 +68,13 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
         this.size--;
     }
 
+    public Nodo<T> getPrimero() {
+        return primero;
+    }
+
+    public void setPrimero(Nodo<T> primero) {
+        this.primero = primero;
+    }
 
     public Object get(int i){
         int cont=0;

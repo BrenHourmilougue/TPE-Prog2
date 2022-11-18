@@ -14,4 +14,7 @@ public class Comision {
     public void addAlumno(Alumno a){
         this.alumnos.add(a);
     }
+    public String getNombre() {
+        return nombre;
+    }
 }
