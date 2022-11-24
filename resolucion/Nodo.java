@@ -1,8 +1,4 @@
 package resolucion;
-import resolucion.facultades.Alumno;
-import resolucion.Comparadores.Comparador;
-import resolucion.Comparadores.ComparadorApellido;
-import resolucion.Comparadores.ComparadorDNI;
 
 public class Nodo<T> {
     private Nodo<T> siguiente;
@@ -12,15 +8,15 @@ public class Nodo<T> {
         this.o=o;
         this.siguiente=null;
     }
-    public void enlazarSiguiente(Nodo n){
+    public void enlazarSiguiente(Nodo<T> n){
         siguiente=n;
     }
     public void insert(Object o){
-        Nodo nodo = new Nodo (o);
+        Nodo<T> nodo = new Nodo<T> (o);
         
     }
 
-    public Nodo getSiguiente() {
+    public Nodo<T> getSiguiente() {
         return siguiente;
     }
     public Object getO() {

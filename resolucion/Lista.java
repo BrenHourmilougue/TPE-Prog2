@@ -3,13 +3,11 @@ package resolucion;
 import java.util.Iterator;
 
 import resolucion.Comparadores.Comparador;
-import resolucion.Comparadores.ComparadorDNI;
-
 
 public class Lista<T> /* implements Iterable<Nodo>*/{
     private Nodo<T> primero;
     private int size;
-    private Comparador<T> orden; //getter y setter. Strategyyyyy
+    private Comparador<T> orden;
     public Lista (Comparador orden){
         this.primero=null;
         this.orden=orden;
@@ -18,12 +16,12 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
 
     public void add(T valorAInsertar){
         Nodo<T> nuevo = new Nodo<T>(valorAInsertar);
-        Iterator it = new Iterador(this.primero);
-        while((orden.compare((T) ((Iterador<T>) it).getCursor().getO(), valorAInsertar)>0)&&(it.hasNext())){
-            it.next();
+        Nodo<T> actual = primero;
+        while(orden.compare((T) nuevo, (T) actual)>0 && actual.getSiguiente()!=null){
+            actual=actual.getSiguiente();
         }
-        nuevo.enlazarSiguiente((Nodo) it.next());
-        ((Iterador<T>) it).getCursor().enlazarSiguiente(nuevo);
+        nuevo.enlazarSiguiente(actual.getSiguiente());
+        actual.enlazarSiguiente(nuevo);
         this.size++;
 
     }
@@ -46,26 +44,27 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
     public void popPosicion(int i){
         if(i==0){
             primero = primero.getSiguiente();
-        }else {
-            Iterator it = new Iterador(this.primero);
-            int cont = 0;
-            while (cont < i - 1) {
-                it.next();
-                cont++;
-            }
-            ((Iterador<T>) it).getCursor().enlazarSiguiente(((Iterador<T>) it).getCursor().getSiguiente().getSiguiente());
             this.size--;
+        }else {
+            Nodo<T> actual = primero;
+            for (int j = 1; j <= i; j++, actual=actual.getSiguiente()) {
+                if (j == i){
+                    //¿El nodo que elimina sigue enganchado a la estructura?  1 -> 2 -> 3    1-> 3  2->3
+                    actual.enlazarSiguiente(actual.getSiguiente().getSiguiente());
+                    this.size--;
+                }
+            }
         }
     }
     public void popElemento(Object o){
-        Iterator it = new Iterador(this.primero);
-        int cont = 0;
-        while ((cont < size()-1) && !((((Iterador<?>) it).getCursor()).equals(o))) {
-            it.next();
-            cont++;
+        Nodo<T> actual = primero;
+        for (int i=0;i<this.size();i++){
+            if (actual.getO().equals(o)){
+                actual.enlazarSiguiente(actual.getSiguiente().getSiguiente());
+                this.size--;
+            }
+            actual=actual.getSiguiente();
         }
-        ((Iterador<T>) it).getCursor().enlazarSiguiente(((Iterador<T>) it).getCursor().getSiguiente().getSiguiente());
-        this.size--;
     }
 
     public Nodo<T> getPrimero() {
