@@ -1,12 +1,6 @@
 package resolucion;
 import resolucion.Comparadores.ComparadorInt;
 import resolucion.facultades.Alumno;
-import resolucion.Comparadores.Comparador;
-import resolucion.Comparadores.ComparadorApellido;
-import resolucion.Comparadores.ComparadorDNI;
-import resolucion.facultades.Carrera;
-import resolucion.facultades.Facultad;
-import resolucion.facultades.Materia;
 
 import java.time.LocalDate;
 
