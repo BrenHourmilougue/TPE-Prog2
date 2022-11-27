@@ -7,10 +7,10 @@ public class Grupo extends Elemento{
     private ArrayList<Alumno> alumnos;
     private ArrayList<Grupo> subgrupos;
 
-    public Grupo(String nombre, ArrayList<Alumno> alumnos, ArrayList<Grupo> subgrupos) {
+    public Grupo(String nombre) {
         super(nombre);
-        this.alumnos = alumnos;
-        this.subgrupos = subgrupos;
+        this.alumnos = new ArrayList<>();
+        this.subgrupos = new ArrayList<>();
     }
 
     public ArrayList<Alumno> getAlumnos() {

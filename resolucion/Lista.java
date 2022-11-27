@@ -13,15 +13,34 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
         this.orden=orden;
         this.size=0;
     }
-
-    public void add(T valorAInsertar){
+    public void add (T valorAInsertar){
         Nodo<T> nuevo = new Nodo<T>(valorAInsertar);
         Nodo<T> actual = primero;
-        while(orden.compare((T) nuevo, (T) actual)>0 && actual.getSiguiente()!=null){
-            actual=actual.getSiguiente();
+        if (actual==null){
+            actual = nuevo;
         }
-        nuevo.enlazarSiguiente(actual.getSiguiente());
-        actual.enlazarSiguiente(nuevo);
+        else {
+            while(actual.getSiguiente()!=(null)){
+                actual=actual.getSiguiente();
+            }
+            actual.enlazarSiguiente(nuevo);
+        }
+
+    }
+    public void addOrdenado(T valorAInsertar){
+        Nodo<T> nuevo = new Nodo<T>(valorAInsertar);
+        Nodo<T> actual = primero;
+        if (actual==(null)){
+            actual = nuevo;
+        }
+        else {
+            while(orden.compare((T) nuevo, (T) actual)>0 && actual.getSiguiente()!=null){
+                actual=actual.getSiguiente();
+            }
+            nuevo.enlazarSiguiente(actual.getSiguiente());
+            actual.enlazarSiguiente(nuevo);
+        }
+
         this.size++;
 
     }
@@ -29,7 +48,7 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
         Iterator it = new Iterador(this.primero);
             while (it.hasNext()){
                 Object o = it.next();
-                System.out.println(o);
+                System.out.println(o.toString());
             }
     }
 
@@ -42,18 +61,34 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
     }
 
     public void popPosicion(int i){
-        if(i==0){
-            primero = primero.getSiguiente();
-            this.size--;
-        }else {
-            Nodo<T> actual = primero;
-            for (int j = 1; j <= i; j++, actual=actual.getSiguiente()) {
-                if (j == i){
-                    //¿El nodo que elimina sigue enganchado a la estructura?  1 -> 2 -> 3    1-> 3  2->3
-                    actual.enlazarSiguiente(actual.getSiguiente().getSiguiente());
-                    this.size--;
+        if(primero!=null){
+            if(i==0){
+                primero = primero.getSiguiente();
+                this.size--;
+            }else {
+                Nodo<T> actual = primero;
+                for (int j = 1; j <= i; j++, actual=actual.getSiguiente()) {
+                    if (j == i){
+                        actual.enlazarSiguiente(actual.getSiguiente().getSiguiente());
+                        this.size--;
+                    }
                 }
             }
+        }
+
+    }
+    public int obtenerPosicionElemento(Object o){
+        Nodo<T> actual = primero;
+        if (actual!=null){
+            int i =0;
+            while (!actual.getO().equals(o)){
+                actual=actual.getSiguiente();
+                i++;
+            }
+            return i;
+        }
+        else {
+            return -1;
         }
     }
     public void popElemento(Object o){
