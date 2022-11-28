@@ -26,11 +26,21 @@ public class Grupo extends Elemento{
     public ArrayList<Grupo> getSubgrupos() {
         return new ArrayList<Grupo>(subgrupos);
     }
-
     public void addGrupo(Grupo g) {
         if (!subgrupos.contains(g)) {
             subgrupos.add(g);
         }
     }
 
+    @Override
+    public int getCantAlumnos() {
+        int cant = 0;
+        for (Alumno alumno:alumnos) {
+            cant+=alumno.getCantAlumnos();
+        }
+        for (Grupo grupo:subgrupos) {
+            cant+=grupo.getCantAlumnos();
+        }
+        return cant;
+    }
 }

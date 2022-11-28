@@ -23,6 +23,11 @@ public class Alumno extends Elemento{
         //agregar interes
     }
 
+    @Override
+    public int getCantAlumnos() {
+        return 1;
+    }
+
     public ArrayList<String> getIntereses() {
         return new ArrayList<String>(intereses);
     }

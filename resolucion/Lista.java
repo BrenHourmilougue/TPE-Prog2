@@ -8,13 +8,13 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
     private Nodo<T> primero;
     private int size;
     private Comparador<T> orden;
-    public Lista (Comparador orden){
+    public Lista (Comparador<T> orden){
         this.primero=null;
         this.orden=orden;
         this.size=0;
     }
     public void add (T valorAInsertar){
-        Nodo<T> nuevo = new Nodo<T>(valorAInsertar);
+        Nodo<T> nuevo = new Nodo<>(valorAInsertar);
         Nodo<T> actual = primero;
         if (actual==null){
             actual = nuevo;
@@ -28,7 +28,7 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
 
     }
     public void addOrdenado(T valorAInsertar){
-        Nodo<T> nuevo = new Nodo<T>(valorAInsertar);
+        Nodo<T> nuevo = new Nodo<>(valorAInsertar);
         Nodo<T> actual = primero;
         if (actual==(null)){
             actual = nuevo;
@@ -45,7 +45,7 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
 
     }
     public void mostrarLista(){
-        Iterator it = new Iterador(this.primero);
+        Iterator<Object> it = new Iterador<>(this.primero);
             while (it.hasNext()){
                 Object o = it.next();
                 System.out.println(o.toString());
@@ -112,7 +112,7 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
 
     public Object get(int i){
         int cont=0;
-        Nodo tmp = primero;
+        Nodo<T> tmp = primero;
         while(cont<i){
             tmp=tmp.getSiguiente();
             cont++;
