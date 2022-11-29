@@ -68,17 +68,17 @@ public class Main {
         //e- Recorre e imprime
 
         actual = l2.getPrimero();
+        System.out.print("l2(");
         while (actual!=null){
-            System.out.println(actual.getO().toString());
+            System.out.print("["+actual.getO().toString()+"]");
             actual = actual.getSiguiente();
         }
+        System.out.print(") \n");
 
         //f- imprimir por consola en que posicion se encuentra "parcial"
-        System.out.println("Posicion Parcial:");
-        System.out.println(l2.obtenerPosicionElemento("Parcial"));
+        System.out.println("Posicion Parcial: " + l2.obtenerPosicionElemento("Parcial"));
         //g-imprimir por consola en que posicion se encuentra "recuperatorio"
-        System.out.println("Posicion Recuperatorio:");
-        System.out.println(l2.obtenerPosicionElemento("Recuperatorio"));
+        System.out.println("Posicion Recuperatorio:" + l2.obtenerPosicionElemento("Recuperatorio"));
 
         //h-cambiar orden lista strings para que queden ordenados descendaentemente
         l2.setOrden(new ComparadorNombre());
