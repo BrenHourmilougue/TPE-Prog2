@@ -32,10 +32,10 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
         Nodo<T> nuevo = new Nodo<>(valorAInsertar);
         Nodo<T> actual = primero;
         if (actual==(null)){
-            actual = nuevo;
+            primero = nuevo;
         }
         else {
-            while(orden.compare((T) nuevo, (T) actual)>0 && actual.getSiguiente()!=null){
+            while(orden.compare(nuevo.getO(), actual.getO())>0 && actual.getSiguiente()!=null){
                 actual=actual.getSiguiente();
             }
             nuevo.enlazarSiguiente(actual.getSiguiente());
@@ -45,6 +45,7 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
         this.size++;
 
     }
+    /*
     public void mostrarLista(){
         Iterator<Object> it = new Iterador<>(this.primero);
             while (it.hasNext()){
@@ -52,7 +53,7 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
                 System.out.println(o.toString());
             }
     }
-
+*/
     public void setOrden(Comparador<T> orden) {
         this.orden = orden;
         //llame a ordenar();

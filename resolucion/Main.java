@@ -37,13 +37,18 @@ public class Main {
         l1.add(11);
 
         //b- Recorrer e imprimir lista
-        l1.mostrarLista();
+
+        for (Nodo n:l1) {
+            System.out.println(n.getO());
+        }
         //c- Eliminar elementos por posicion
         l1.popPosicion(0);
         l1.popElemento(5);
         l1.popElemento(11);
         //Recorre nuevamente e imprime
-        l1.mostrarLista();
+        for (Nodo n:l1) {
+            System.out.println(n.getO());
+        }
 
 
         //d- Crear lista de Strings
