@@ -40,10 +40,12 @@ public class Main {
         System.out.println("Lista con numeros");
         Nodo actual = new Nodo<>(null);
         actual=l1.getPrimero();
+        System.out.print("l1(");
         while (actual!=null){
-            System.out.println(actual.getO());
+            System.out.print("["+actual.getO()+"]");
             actual = actual.getSiguiente();
         }
+        System.out.print(") \n");
         //c- Eliminar elementos por posicion
         l1.popPosicion(0);
         l1.popElemento(5);
@@ -51,10 +53,12 @@ public class Main {
         //Recorre nuevamente e imprime
         System.out.println("Lista con numeros despues de eliminar la posicion 0, el elemento que contenga 5 y el q contenga 11");
         actual = l1.getPrimero();
+        System.out.print("l1(");
         while (actual!=null){
-            System.out.println(actual.getO().toString());
+            System.out.print("["+actual.getO().toString()+"]");
             actual = actual.getSiguiente();
         }
+        System.out.print(") \n");
 
 
         //d- Crear lista de Strings
