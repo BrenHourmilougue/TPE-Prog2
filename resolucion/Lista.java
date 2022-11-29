@@ -7,8 +7,8 @@ import resolucion.Comparadores.Comparador;
 public class Lista<T> /* implements Iterable<Nodo>*/{
     private Nodo<T> primero;
     private int size;
-    private Comparador<T> orden;
-    public Lista (Comparador<T> orden){
+    private Comparador orden;
+    public Lista (Comparador orden){
         this.primero=null;
         this.orden=orden;
         this.size=0;
@@ -28,7 +28,7 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
         }
 
     }
-    public void addOrdenado(T valorAInsertar){
+    public void addOrdenado(Object valorAInsertar){
         Nodo<T> nuevo = new Nodo<>(valorAInsertar);
         Nodo<T> actual = primero;
         if (actual==(null)){
@@ -54,7 +54,7 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
             }
     }
 */
-    public void setOrden(Comparador<T> orden) {
+    public void setOrden(Comparador orden) {
         this.orden = orden;
         //llame a ordenar();
     }
@@ -92,29 +92,10 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
         else {
             return -1;
         }
-
-
-        /*if (actual!=null){
-            int i =0;
-            while (actual!=null && !actual.getO().equals(o)){
-                actual=actual.getSiguiente();
-                i++;
-            }
-            return i;
-        }
-        else {
-            return -1;
-        }*/
     }
     public void popElemento(Object o){
-        Nodo<T> actual = primero;
-        for (int i=0;i<this.size();i++){
-            if (actual.getO().equals(o)){
-                actual.enlazarSiguiente(actual.getSiguiente().getSiguiente());
-                this.size--;
-            }
-            actual=actual.getSiguiente();
-        }
+        int pos = this.obtenerPosicionElemento(o);
+        this.popPosicion(pos);
     }
 
     public Nodo<T> getPrimero() {

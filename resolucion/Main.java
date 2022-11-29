@@ -38,16 +38,21 @@ public class Main {
 
         //b- Recorrer e imprimir lista
 
-        for (Nodo n:l1) {
-            System.out.println(n.getO());
+        Nodo actual = new Nodo<>(null);
+        actual=l1.getPrimero();
+        while (actual!=null){
+            System.out.println(actual.getO());
+            actual = actual.getSiguiente();
         }
         //c- Eliminar elementos por posicion
         l1.popPosicion(0);
         l1.popElemento(5);
         l1.popElemento(11);
         //Recorre nuevamente e imprime
-        for (Nodo n:l1) {
-            System.out.println(n.getO());
+        actual = l1.getPrimero();
+        while (actual!=null){
+            System.out.println(actual.getO().toString());
+            actual = actual.getSiguiente();
         }
 
 
@@ -58,8 +63,15 @@ public class Main {
         l2.add("Facil");
         l2.add("Parcial");
         l2.add("Prog2");
+
         //e- Recorre e imprime
-        l2.mostrarLista();
+
+        actual = l2.getPrimero();
+        while (actual!=null){
+            System.out.println(actual.getO().toString());
+            actual = actual.getSiguiente();
+        }
+
         //f- imprimir por consola en que posicion se encuentra "parcial"
         System.out.println(l2.obtenerPosicionElemento("Parcial"));
         //g-imprimir por consola en que posicion se encuentra "recuperatorio"
