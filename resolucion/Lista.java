@@ -16,8 +16,9 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
     public void add (T valorAInsertar){
         Nodo<T> nuevo = new Nodo<>(valorAInsertar);
         Nodo<T> actual = primero;
-        if (actual==null){
-            actual = nuevo;
+        if (primero == null){
+            primero = nuevo;
+
         }
         else {
             while(actual.getSiguiente()!=(null)){
@@ -79,9 +80,22 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
     }
     public int obtenerPosicionElemento(Object o){
         Nodo<T> actual = primero;
-        if (actual!=null){
+        int i =0;
+        while (actual!=null && !actual.getO().equals(o)){
+            actual=actual.getSiguiente();
+            i++;
+        }
+        if(actual != null){
+            return i;
+        }
+        else {
+            return -1;
+        }
+
+
+        /*if (actual!=null){
             int i =0;
-            while (!actual.getO().equals(o)){
+            while (actual!=null && !actual.getO().equals(o)){
                 actual=actual.getSiguiente();
                 i++;
             }
@@ -89,7 +103,7 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
         }
         else {
             return -1;
-        }
+        }*/
     }
     public void popElemento(Object o){
         Nodo<T> actual = primero;

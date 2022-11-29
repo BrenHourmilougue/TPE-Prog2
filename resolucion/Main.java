@@ -150,5 +150,7 @@ public class Main {
         ejercicio4i.addOrdenado(g7);
         ejercicio4i.addOrdenado(g6);
 
+        System.out.println(g7.getAlumnos());
+
     }
 }
