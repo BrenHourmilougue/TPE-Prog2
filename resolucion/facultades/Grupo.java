@@ -4,42 +4,28 @@ import java.util.ArrayList;
 
 public class Grupo extends Elemento{
 
-    private ArrayList<Alumno> alumnos;
-    private ArrayList<Grupo> subgrupos;
+    private ArrayList<Elemento> elementos;
 
     public Grupo(String nombre) {
         super(nombre);
-        this.alumnos = new ArrayList<>();
-        this.subgrupos = new ArrayList<>();
+        this.elementos = new ArrayList<>();
     }
 
-    public ArrayList<Alumno> getAlumnos() {
-        return new ArrayList<Alumno>(alumnos);
+    public ArrayList<Elemento> getElementos() {
+        return new ArrayList<Elemento>(elementos);
     }
 
-    public void addAlumnos(Alumno a) {
-        if (!alumnos.contains(a)) {
-            alumnos.add(a);
-        }
-    }
-
-    public ArrayList<Grupo> getSubgrupos() {
-        return new ArrayList<Grupo>(subgrupos);
-    }
-    public void addGrupo(Grupo g) {
-        if (!subgrupos.contains(g)) {
-            subgrupos.add(g);
+    public void addElemento(Elemento e) {
+        if (!elementos.contains(e)) {
+            elementos.add(e);
         }
     }
 
     @Override
     public int getCantAlumnos() {
         int cant = 0;
-        for (Alumno alumno:alumnos) {
-            cant+=alumno.getCantAlumnos();
-        }
-        for (Grupo grupo:subgrupos) {
-            cant+=grupo.getCantAlumnos();
+        for (Elemento e:elementos) {
+            cant+=e.getCantAlumnos();
         }
         return cant;
     }

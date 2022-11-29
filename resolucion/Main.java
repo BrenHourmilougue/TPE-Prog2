@@ -20,11 +20,11 @@ public class Main {
         Alumno a2 =new Alumno(2,"Juanito", "Alcachofa", LocalDate.now());
         Alumno a3 =new Alumno(3, "Agus", "Tincito", LocalDate.now());
 
-        f1.addGrupo(c1);
-        c1.addGrupo(m1);
-        m1.addAlumnos(a1);
-        m1.addAlumnos(a2);
-        m1.addAlumnos(a3);
+        f1.addElemento(c1);
+        c1.addElemento(m1);
+        m1.addElemento(a1);
+        m1.addElemento(a2);
+        m1.addElemento(a3);
 
         //Ejercicio 4
 
@@ -37,7 +37,7 @@ public class Main {
         l1.add(11);
 
         //b- Recorrer e imprimir lista
-
+        System.out.println("Lista con numeros");
         Nodo actual = new Nodo<>(null);
         actual=l1.getPrimero();
         while (actual!=null){
@@ -49,6 +49,7 @@ public class Main {
         l1.popElemento(5);
         l1.popElemento(11);
         //Recorre nuevamente e imprime
+        System.out.println("Lista con numeros despues de eliminar la posicion 0, el elemento que contenga 5 y el q contenga 11");
         actual = l1.getPrimero();
         while (actual!=null){
             System.out.println(actual.getO().toString());
@@ -73,8 +74,10 @@ public class Main {
         }
 
         //f- imprimir por consola en que posicion se encuentra "parcial"
+        System.out.println("Posicion Parcial:");
         System.out.println(l2.obtenerPosicionElemento("Parcial"));
         //g-imprimir por consola en que posicion se encuentra "recuperatorio"
+        System.out.println("Posicion Recuperatorio:");
         System.out.println(l2.obtenerPosicionElemento("Recuperatorio"));
 
         //h-cambiar orden lista strings para que queden ordenados descendaentemente
@@ -113,22 +116,22 @@ public class Main {
         a10.addIntereses("argentina");
 
         Grupo g1 = new Grupo("Historia");
-        g1.addAlumnos(a10);
-        g1.addAlumnos(a9);
-        g1.addAlumnos(a8);
+        g1.addElemento(a10);
+        g1.addElemento(a9);
+        g1.addElemento(a8);
 
         Grupo g2 = new Grupo("Humanas");
-        g2.addAlumnos(a7);
-        g2.addGrupo(g1);
+        g2.addElemento(a7);
+        g2.addElemento(g1);
 
         Grupo g3 = new Grupo("Exactas");
-        g3.addAlumnos(a5);
-        g3.addAlumnos(a6);
+        g3.addElemento(a5);
+        g3.addElemento(a6);
 
         Grupo g4 = new Grupo("UNICEN");
-        g4.addGrupo(g3);
-        g4.addGrupo(g2);
-        g4.addAlumnos(a4);
+        g4.addElemento(g3);
+        g4.addElemento(g2);
+        g4.addElemento(a4);
 
         //ESTRUCTURA OLIMPIADAS
 
@@ -142,8 +145,8 @@ public class Main {
         a12.addIntereses("algebra");
 
         Grupo g5 = new Grupo("Matea2");
-        g5.addAlumnos(a11);
-        g5.addAlumnos(a12);
+        g5.addElemento(a11);
+        g5.addElemento(a12);
 
         //Los Fibo
         Alumno a13 = new Alumno(30987654, "Benardino", "Rivas", LocalDate.of(1997,12,25));
@@ -154,20 +157,25 @@ public class Main {
         a15.addIntereses("sucesiones");
 
         Grupo g6 = new Grupo("Los Fibo");
-        g6.addAlumnos(a13);
-        g6.addAlumnos(a14);
-        g6.addAlumnos(a15);
+        g6.addElemento(a13);
+        g6.addElemento(a14);
+        g6.addElemento(a15);
 
         Grupo g7 = new Grupo("Olimpiadas Matematicas");
-        g7.addGrupo(g6);
-        g7.addGrupo(g5);
+        g7.addElemento(g6);
+        g7.addElemento(g5);
 
         //Crea la lista y agrega ordenados por cantidad de alumnos
         Lista ejercicio4i = new Lista<Grupo>(new ComparadorCantAlumnos());
         ejercicio4i.addOrdenado(g7);
         ejercicio4i.addOrdenado(g6);
 
-        System.out.println(g7.getAlumnos());
+        System.out.println("Estructuras guardadas en una Lista vinculada");
+        actual = ejercicio4i.getPrimero();
+        while (actual!=null){
+            System.out.println(actual.getO().toString());
+            actual = actual.getSiguiente();
+        }
 
     }
 }
