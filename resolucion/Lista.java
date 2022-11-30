@@ -26,7 +26,7 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
             }
             actual.enlazarSiguiente(nuevo);
         }
-
+        this.size++;
     }
     public void addOrdenado(Object valorAInsertar){
         Nodo<T> nuevo = new Nodo<>(valorAInsertar);
@@ -56,10 +56,25 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
 */
     public void setOrden(Comparador orden) {
         this.orden = orden;
-        //llame a ordenar();
+        this.ordenar();
     }
     public void ordenar(){
-        //ordenar burbujeo o alguno por el estilo pero usando el iterator
+        int a=0;
+        int b;
+        Nodo i = new Nodo<>(primero.getO());
+        Nodo aux = new Nodo<>(null);
+        while (a<this.size()-1){
+            a++;
+            b=0;
+            Nodo j = new Nodo<>(primero.getO());
+            while (b<this.size()-a-1){
+                if (orden.compare(j.getSiguiente().getO(),j.getO())<0){
+                    aux = j.getSiguiente();
+                    j.enlazarSiguiente(j);
+                    j=aux;
+                }
+            }
+        }
     }
 
     public void popPosicion(int i){

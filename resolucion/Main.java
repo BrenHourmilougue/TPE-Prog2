@@ -46,6 +46,7 @@ public class Main {
             actual = actual.getSiguiente();
         }
         System.out.print(") \n");
+
         //c- Eliminar elementos por posicion
         l1.popPosicion(0);
         l1.popElemento(5);
@@ -82,7 +83,7 @@ public class Main {
         //f- imprimir por consola en que posicion se encuentra "parcial"
         System.out.println("Posicion Parcial: " + l2.obtenerPosicionElemento("Parcial"));
         //g-imprimir por consola en que posicion se encuentra "recuperatorio"
-        System.out.println("Posicion Recuperatorio:" + l2.obtenerPosicionElemento("Recuperatorio"));
+        System.out.println("Posicion Recuperatorio:" + l2.obtenerPosicionElemento("Recuperatorio") +" (devuelve -1 porque no lo encuentra)");
 
         //h-cambiar orden lista strings para que queden ordenados descendaentemente
         l2.setOrden(new ComparadorNombre());
@@ -181,5 +182,17 @@ public class Main {
             actual = actual.getSiguiente();
         }
 
+        l1.add(2);
+        l1.add(23);
+        l1.add(5);
+        l1.ordenar();
+        System.out.println("l1 ordenada");
+        actual = l1.getPrimero();
+        System.out.print("l1(");
+        while (actual!=null){
+            System.out.print("["+actual.getO().toString()+"]");
+            actual = actual.getSiguiente();
+        }
+        System.out.print(") \n");
     }
 }
