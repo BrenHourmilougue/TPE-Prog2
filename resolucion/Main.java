@@ -85,7 +85,7 @@ public class Main {
         //g-imprimir por consola en que posicion se encuentra "recuperatorio"
         System.out.println("Posicion Recuperatorio:" + l2.obtenerPosicionElemento("Recuperatorio") +" (devuelve -1 porque no lo encuentra)");
 
-        //h-cambiar orden lista strings para que queden ordenados descendaentemente
+        //h-cambiar orden lista strings para que queden ordenados descendentemente
         l2.setOrden(new ComparadorNombre());
 
         //i- Implementar estructuras e insertar en una lista vinculada ordenadas por cantidad de alumnos
