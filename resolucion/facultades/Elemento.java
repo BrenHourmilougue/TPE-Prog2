@@ -1,7 +1,6 @@
 package resolucion.facultades;
 
 public abstract class Elemento {
-
     private String nombre;
 
     public Elemento (String nombre) {

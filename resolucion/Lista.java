@@ -31,15 +31,23 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
     public void addOrdenado(Object valorAInsertar){
         Nodo<T> nuevo = new Nodo<>(valorAInsertar);
         Nodo<T> actual = primero;
+        Nodo<T>temp = null;
         if (actual==(null)){
             primero = nuevo;
         }
         else {
-            while(orden.compare(nuevo.getO(), actual.getO())>0 && actual.getSiguiente()!=null){
-                actual=actual.getSiguiente();
-            }
-            nuevo.enlazarSiguiente(actual.getSiguiente());
-            actual.enlazarSiguiente(nuevo);
+                while (actual != null && orden.compare(nuevo.getO(), actual.getO()) > 0) {
+                    temp = actual;
+                    actual = actual.getSiguiente();
+                }
+                if(orden.compare(primero.getO(),nuevo.getO())>=0){
+                    nuevo.enlazarSiguiente(actual);
+                    primero=nuevo;
+                }
+                else {
+                    nuevo.enlazarSiguiente(actual);
+                    temp.enlazarSiguiente(nuevo);
+                }
         }
 
         this.size++;
@@ -59,22 +67,41 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
         this.ordenar();
     }
     public void ordenar(){
+        if(primero!=null){
+            for (int i = 0; i < size(); i++) {
+                Nodo<T> actual = primero;
+                Nodo<T>anterior = primero;
+                Nodo<T> siguiente = primero.getSiguiente();
+
+                while (anterior != null && orden.compare(actual.getO(), anterior.getO()) > 0) {
+                    anterior = siguiente;
+                    siguiente = siguiente.getSiguiente();
+                }
+                primero=actual.getSiguiente();
+                actual.enlazarSiguiente(siguiente);
+                anterior.enlazarSiguiente(actual);
+            }
+        }
+
+        /*
         int a=0;
         int b;
-        Nodo i = new Nodo<>(primero.getO());
-        Nodo aux = new Nodo<>(null);
-        while (a<this.size()-1){
+        Nodo<T> i = primero;
+        Nodo<T> aux = new Nodo<>(null);
+        while (i.getSiguiente()!=null) {
             a++;
-            b=0;
-            Nodo j = new Nodo<>(primero.getO());
-            while (b<this.size()-a-1){
-                if (orden.compare(j.getSiguiente().getO(),j.getO())<0){
+            b = 0;
+            Nodo j = primero;
+            while (b < this.size() - a - 1) {
+                if (orden.compare(j.getSiguiente().getO(), j.getO()) < 0) {
                     aux = j.getSiguiente();
-                    j.enlazarSiguiente(j);
-                    j=aux;
+                    j.enlazarSiguiente(aux.getSiguiente());
+                    aux.enlazarSiguiente(j);
                 }
             }
         }
+        i=i.getSiguiente();
+         */
     }
 
     public void popPosicion(int i){
