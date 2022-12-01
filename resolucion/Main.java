@@ -1,8 +1,5 @@
 package resolucion;
-import resolucion.Comparadores.Comparador;
-import resolucion.Comparadores.ComparadorCantAlumnos;
-import resolucion.Comparadores.ComparadorInt;
-import resolucion.Comparadores.ComparadorNombre;
+import resolucion.Comparadores.*;
 import resolucion.facultades.Alumno;
 import resolucion.facultades.Grupo;
 
@@ -63,7 +60,7 @@ public class Main {
 
 
         //d- Crear lista de Strings
-        Lista l2 = new Lista<String>(new ComparadorNombre());
+        Lista l2 = new Lista<String>(new ComparadorString());
 
         l2.add("Es");
         l2.add("Facil");
@@ -86,7 +83,7 @@ public class Main {
         System.out.println("Posicion Recuperatorio:" + l2.obtenerPosicionElemento("Recuperatorio") +" (devuelve -1 porque no lo encuentra)");
 
         //h-cambiar orden lista strings para que queden ordenados descendentemente
-        l2.setOrden(new ComparadorNombre());
+        l2.setOrden(new ComparadorString());
 
         //i- Implementar estructuras e insertar en una lista vinculada ordenadas por cantidad de alumnos
 

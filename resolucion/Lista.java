@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 import resolucion.Comparadores.Comparador;
 
-public class Lista<T> /* implements Iterable<Nodo>*/{
+public class Lista<T> {
     private Nodo<T> primero;
     private int size;
     private Comparador orden;
@@ -67,6 +67,15 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
         this.ordenar();
     }
     public void ordenar(){
+        Lista aux = new Lista<T>(this.orden);
+        Nodo<T> cursor = primero;
+
+        for (int i = 0; i < size(); i++) {
+            aux.addOrdenado(cursor.getO());
+            cursor=cursor.getSiguiente();
+        }
+        this.setPrimero(aux.getPrimero());
+        /*
         if(primero!=null){
             for (int i = 0; i < size(); i++) {
                 Nodo<T> actual = primero;
@@ -83,7 +92,7 @@ public class Lista<T> /* implements Iterable<Nodo>*/{
             }
         }
 
-        /*
+
         int a=0;
         int b;
         Nodo<T> i = primero;
